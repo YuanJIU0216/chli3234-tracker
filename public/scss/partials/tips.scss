@@ -1,0 +1,90 @@
+.Tips{
+    background-color: hsl(0,0%,98%);
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.Tips{
+    h1{
+        text-align: center;
+        color:$specialGreen;
+    }
+
+    &_content{
+
+    }
+
+    &_grid{
+        display: grid;
+        // repeat three Tips and give all size 1fr.
+        grid-template-columns: repeat(3,1fr);
+        // Distance between each grid
+        gap: 4rem;
+        
+    }
+
+    &_item{
+       border-radius: 0.5rem;
+        // overflow make sure actual conner occurs   
+       overflow: hidden;
+
+        // make the shadow on every tips card    
+       box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+
+        //make the anime more smooth 
+       transition:all 0.3s ease-in-out; 
+
+        //make responsive, mouse on it, it large    
+       &:hover{
+        transform: scale(1.05);
+       }
+    }
+
+    &_image{
+        height:12.5rem;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        
+    }
+
+    &_text{
+        padding:1rem 2rem;
+        text-align: center;
+        color:$specialGreen;
+    }
+
+    &_title{
+        font-size: large;
+    }
+
+    &_button{
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.5rem;
+        color:white;
+        background-color:$specialGreen;
+        border-radius: 5px;
+        border-color: $specialGreen;
+        &:hover{
+            color:$specialGreen;
+            background-color:white;
+           }
+        
+    }
+
+    &_description{
+
+    }
+
+    &_detailClear{
+        position:relative;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.5rem;
+        color:white;
+        background-color:$specialGreen;
+        border-color: $specialGreen;
+        border-radius: 5px;
+    }
+}
