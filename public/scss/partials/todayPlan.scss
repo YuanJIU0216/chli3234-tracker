@@ -6,7 +6,7 @@
     }
 
     #tasklist{
-        align-items: center;
+        // align-items: center;
         .listItem{
             // padding: 2rem;
             // display: block;
@@ -83,7 +83,7 @@
         border-radius: 12px;
         border-color: transparent;
 
-        background-color: $specialGreen;
+        background-color: $specialRed;
         color: white;
         cursor: pointer;
         transition: all 0.2s ease-in-out;

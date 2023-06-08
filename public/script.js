@@ -187,10 +187,10 @@ displayTasks();
 // Here is exercise Suggest part
 // Four example
 
-ExerciseSuggest("You",70,30,"Warm up","Light");
-ExerciseSuggest("You",70,60,"Swimming","Moderate");
-ExerciseSuggest("You",70,60,"Other","Moderate");
-ExerciseSuggest("You",70,120,"Swimming","Heavy");
+ExerciseSuggest("Suggest",70,30,"Warm up","Light");
+ExerciseSuggest("Suggest",70,60,"Swimming","Moderate");
+ExerciseSuggest("Suggest",70,60,"Other","Moderate");
+ExerciseSuggest("Suggest",70,120,"Swimming","Heavy");
 function ExerciseSuggest(name, weight, duration, type, strength){
     let burned = calculateCaloriesBurned(weight, duration, strength)
     console.log("1")
@@ -199,17 +199,18 @@ function ExerciseSuggest(name, weight, duration, type, strength){
     let suggestItem = document.createElement("li");
     // set listItem as li attribute, I can make it beauty in scss
     suggestItem.setAttribute("class", "suggestItem");
-    suggestItem.innerHTML= `<h1>Suggest</h1><p><strong>Suggest ${type} exercise</strong></p><br><p>The plan duration is <strong>${duration} min</strong><br>
-    The chosen intensity is <strong>${strength}</strong></p><br><p>Claories Burned will be:<br> <strong>"${burned}"calories per minute.</strong> </p>`
+    suggestItem.innerHTML= `<h1>Suggest</h1><p><strong>Suggest ${type} exercise</strong><br><br>The plan duration is <strong>${duration} min</strong><br>
+    The chosen intensity is <strong>${strength}</strong><br><br>Claories Burned will be:<br> <strong>"${burned}"calories per minute.</strong> </p>`
 
-    suggestList.appendChild(suggestItem);
+    
 
     let AddButton = document.createElement("button");
     let AddButtonText = document.createTextNode("Add");
     AddButton.appendChild(AddButtonText);
     AddButton.setAttribute("class","AddPlanBtn")
-    suggestList.appendChild(AddButton); 
-    
+    suggestItem.appendChild(AddButton)
+    suggestList.appendChild(suggestItem);
+
     AddButton.addEventListener('click',(even)=>{
         addTask(name, weight, duration, type, strength);
     })
