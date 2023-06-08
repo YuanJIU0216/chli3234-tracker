@@ -2,6 +2,7 @@
     background-color: hsl(0,0%,98%);
     margin-left: 5rem;
     margin-right: 5rem;
+    
 }
 
 .Tips{
@@ -59,16 +60,14 @@
     }
 
     &_button{
-        align-items: center;
-        justify-content: center;
         margin-top: 0.5rem;
         color:white;
         background-color:$specialGreen;
         border-radius: 5px;
-        border-color: $specialGreen;
+        border-color: transparent;
         &:hover{
-            color:$specialGreen;
-            background-color:white;
+            color:white;
+            background-color:$specialRed;
            }
         
     }
@@ -77,14 +76,37 @@
 
     }
 
+    // DetailClear button
     &_detailClear{
-        position:relative;
-        align-items: center;
-        justify-content: center;
-        margin-top: 0.5rem;
-        color:white;
-        background-color:$specialGreen;
-        border-color: $specialGreen;
-        border-radius: 5px;
+
+        // make button go center and add styles
+        width: 80%;
+        display: block;
+        margin: 1em auto;
+        height: 60px;
+        
+        border: 2px solid #666;
+        border-radius: 12px;
+        border-color: transparent;
+
+        background-color: $specialGreen;
+        color: white;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        // make button anime
+        &:hover {
+            transition:all 0.3s ease-in-out; 
+            transform: translateY(-2px);
+            box-shadow: 2px 4px 10px rgba(0, 0, 0, .15);
+
+            color:white;
+            background-color:red;
+        }
+
+        &:active,
+        &:focus {
+            outline: 0;
+        }
     }
 }
