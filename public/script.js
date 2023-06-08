@@ -1,7 +1,7 @@
-// import images from './images/thumbnails/*.gif';
-// console.log(images)
+import images from './images/thumbnails/*.gif';
+console.log(images)
 
-/*
+
 
 // Setting up variables for our HTML elements using DOM selection
 const form = document.getElementById("taskform");
@@ -25,7 +25,7 @@ form.addEventListener("submit", function (event) {
 function displayTasks() {
 
     // Clear the tasklist <ul> element's content
-    tasklist.innerHTML = ""
+    tasklist.innerHTML = "";
 
     // Fetch and parse tasks array from localStorage
     let localTasks = JSON.parse(localStorage.getItem('tasks'))
@@ -136,7 +136,7 @@ function addTask(name, type, rate, time, client) {
 // Call the function with test values for the input paramaters
 addTask("Initial Sketches", "Concept Ideation", 50, 5, "Google");
 
-*/
+
 
 
 const list = document.querySelector(".Tips_content ul");
