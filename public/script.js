@@ -74,7 +74,7 @@ function displayTasks() {
 
             // item.innerHTML = `<p><strong>${task.name}</strong><br>${task.type}</p><img src='${taskImage}' width='50'/>`;
             item.innerHTML = `<h1>Suggest</h1><p><strong>${task.name}'s ${task.type} exercise</strong></p><img src='${taskImage}' width='50'/ class="planImage"><br><p>The plan duration is <strong>${task.duration} min</strong><br>
-            The chosen intensity is <strong>${task.strength}</strong></p><img src='${taskImage2}' class="planImage" width='50'/><br><p>Claories Burned will burned:<br> <strong>"${task.burned}"calories per minute.</strong> </p>`
+            The chosen intensity is <strong>${task.strength}</strong></p><img src='${taskImage2}' class="planImage" width='50'/><br><p>Claories Burned will be:<br> <strong>"${task.burned}"calories per minute.</strong> </p>`
             tasklist.appendChild(item);
 
             // Clear the value of the input once the task has been added to the page
@@ -109,6 +109,7 @@ function displayTasks() {
     }
 
 }
+
 
 // here set delete all button which can quickly clean storage
 const DelAllBtn = document.getElementById('cleanPlan');
