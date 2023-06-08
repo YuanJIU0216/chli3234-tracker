@@ -68,9 +68,13 @@ function displayTasks() {
             // Create new list item and populate with content (including data attribute for ID)
             let item = document.createElement("li");
             item.setAttribute("data-id", task.id);
+
+            // set listItem as li attribute, I can make it beauty in scss
+            item.setAttribute("class", "listItem");
+
             // item.innerHTML = `<p><strong>${task.name}</strong><br>${task.type}</p><img src='${taskImage}' width='50'/>`;
-            item.innerHTML = `<p><strong>${task.name}</strong><br>${task.type} exercise</p><img src='${taskImage}' width='50'/><br><p>${task.duration} min<br>
-            ${task.strength} intensity</p><img src='${taskImage2}' width='50'/><br><p>Total Claories Burned: "${task.burned}"calories per minute. </p>`
+            item.innerHTML = `<h1>Suggest</h1><p><strong>${task.name}'s ${task.type} exercise</strong></p><img src='${taskImage}' width='50'/ class="planImage"><br><p>The plan duration is <strong>${task.duration} min</strong><br>
+            The chosen intensity is <strong>${task.strength}</strong></p><img src='${taskImage2}' class="planImage" width='50'/><br><p>Claories Burned will burned:<br> <strong>"${task.burned}"calories per minute.</strong> </p>`
             tasklist.appendChild(item);
 
             // Clear the value of the input once the task has been added to the page
@@ -80,6 +84,7 @@ function displayTasks() {
             let delButton = document.createElement("button");
             let delButtonText = document.createTextNode("Delete");
             delButton.appendChild(delButtonText);
+            delButton.setAttribute("class","DelPlanBtn")
             item.appendChild(delButton); // Adds a delete button to every task
 
             // Listen for when the delete button is clicked
@@ -104,6 +109,14 @@ function displayTasks() {
     }
 
 }
+
+// here set delete all button which can quickly clean storage
+const DelAllBtn = document.getElementById('cleanPlan');
+DelAllBtn.addEventListener("click",function(event){
+    localStorage.removeItem('tasks');
+    displayTasks();
+})
+
 
 // This function is to get Calories which calculate auto
 function calculateCaloriesBurned(weight, duration, strength) {
@@ -167,9 +180,9 @@ function addTask(name, weight, duration, type, strength) {
 
 }
 
+//make sure even though we not input any data
+//but we still can see the storage 
 displayTasks();
-// Call the function with test values for the input paramaters
-// addTask("Initial Sketches", "Concept Ideation", 50, 5, "Google");
 
 
 
@@ -198,10 +211,9 @@ button1.addEventListener("click", function(event) {
     // create Text element
     let text1 = document.createElement('p')
     text1.innerHTML=
-    `<p>1.Swimming after eating is a topic that has generated various opinions.
+    `<p>1.Swimming after eating is a topic that has generated various opinions. While the "wait one hour after eating before swimming"
     <br>
-    While the "wait one hour after eating before swimming" rule is commonly
-    mentioned, it is not entirely accurate. 
+    rule is commonly mentioned, it is not entirely accurate. 
     <br><br>
     2.Digestion varies from person to person, and there is no fixed timeframe 
     that applies to everyone. 
