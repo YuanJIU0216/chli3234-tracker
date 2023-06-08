@@ -2,7 +2,6 @@ import images from './images/thumbnails/*.gif';
 console.log(images)
 
 
-
 // Setting up variables for our HTML elements using DOM selection
 const form = document.getElementById("taskform");
 const tasklist = document.getElementById("tasklist");
@@ -13,10 +12,10 @@ form.addEventListener("submit", function (event) {
     event.preventDefault();
     addTask(
         form.elements.taskName.value,
+        form.elements.taskWeight.value,
+        form.elements.taskDuration.value,
         form.elements.taskType.value,
-        form.elements.taskRate.value,
-        form.elements.taskTime.value,
-        form.elements.taskClient.value,
+        form.elements.taskStrength.value,
     )
 })
 
@@ -37,15 +36,30 @@ function displayTasks() {
         localTasks.forEach(function (task) {
 
             let taskImage = null;
+            let taskImage2 = null;
             switch (task.type) {
-                case 'Concept Ideation':
-                    taskImage = images['ideate']
+                case 'Warm up':
+                    taskImage = images['warmUp']
                     break;
-                case 'Wireframing':
-                    taskImage = images['design']
+                case 'Swimming':
+                    taskImage = images['swimming']
                     break;
-                case 'Application Coding':
-                    taskImage = images['code']
+                case 'Other':
+                    taskImage = images['other']
+                    break;
+                default:
+                    break;
+            }
+
+            switch (task.strength) {
+                case 'Light':
+                    taskImage2 = images['light']
+                    break;
+                case 'Moderate':
+                    taskImage2 = images['moderate']
+                    break;
+                case 'Heavy':
+                    taskImage2 = images['heavy']
                     break;
                 default:
                     break;
@@ -54,7 +68,9 @@ function displayTasks() {
             // Create new list item and populate with content (including data attribute for ID)
             let item = document.createElement("li");
             item.setAttribute("data-id", task.id);
-            item.innerHTML = `<p><strong>${task.name}</strong><br>${task.type}</p><img src='${taskImage}' width='50'/>`;
+            // item.innerHTML = `<p><strong>${task.name}</strong><br>${task.type}</p><img src='${taskImage}' width='50'/>`;
+            item.innerHTML = `<p><strong>${task.name}</strong><br>${task.type} exercise</p><img src='${taskImage}' width='50'/><br><p>${task.duration} min<br>
+            ${task.strength} intensity</p><img src='${taskImage2}' width='50'/><br><p>Total Claories Burned: "${task.burned}"calories per minute. </p>`
             tasklist.appendChild(item);
 
             // Clear the value of the input once the task has been added to the page
@@ -89,6 +105,23 @@ function displayTasks() {
 
 }
 
+// This function is to get Calories which calculate auto
+function calculateCaloriesBurned(weight, duration, strength) {
+    let Intensity;
+    if(strength == "Light"){
+        Intensity = 5;
+    }else if (strength == "Moderate"){
+        Intensity = 8;
+    }else if (strength == "Heavy"){
+        Intensity = 12;
+    }
+
+    const K = 3.5; // Calories normal
+    // hours * Intensity * kg * 3.5 / 
+    const caloriesBurned = duration/60 * Intensity * weight * K / 200;
+    return caloriesBurned;
+  }
+
 
 // Create a function called 'addTask'
 // Give the function input parameters for: name, type, rate, time, client
@@ -96,17 +129,18 @@ function displayTasks() {
 // Replace the property values with the input paramaters
 // Add the object to the taskList array
 
-function addTask(name, type, rate, time, client) {
+function addTask(name, weight, duration, type, strength) {
 
     // Creating the object, directly passing in the input parameters
     let task = {
         name,
-        type,
+        weight,
         id: Date.now(),
         date: new Date().toISOString(),
-        rate,
-        time,
-        client
+        duration,
+        type,
+        strength,
+        burned: calculateCaloriesBurned(weight,duration,strength)
     }
 
     // Fetch and parse tasks array from localStorage 
@@ -133,17 +167,17 @@ function addTask(name, type, rate, time, client) {
 
 }
 
+displayTasks();
 // Call the function with test values for the input paramaters
-addTask("Initial Sketches", "Concept Ideation", 50, 5, "Google");
+// addTask("Initial Sketches", "Concept Ideation", 50, 5, "Google");
 
 
 
-
+// Every day Tips part
 const list = document.querySelector(".Tips_content ul");
 const button1 = document.getElementById("button1");
 const button2 = document.getElementById("button2");
 const button3 = document.getElementById("button3");
-let buttonName="";
 
 
 // add EventListener in every Item
