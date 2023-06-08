@@ -1,5 +1,7 @@
-import images from './images/thumbnails/*.gif';
-console.log(images)
+// import images from './images/thumbnails/*.gif';
+// console.log(images)
+
+/*
 
 // Setting up variables for our HTML elements using DOM selection
 const form = document.getElementById("taskform");
@@ -133,3 +135,152 @@ function addTask(name, type, rate, time, client) {
 
 // Call the function with test values for the input paramaters
 addTask("Initial Sketches", "Concept Ideation", 50, 5, "Google");
+
+*/
+
+
+const list = document.querySelector(".Tips_content ul");
+const button1 = document.getElementById("button1");
+const button2 = document.getElementById("button2");
+const button3 = document.getElementById("button3");
+let buttonName="";
+
+
+// add EventListener in every Item
+button1.addEventListener("click", function(event) {
+    console.log("Button 1 clicked");
+
+    // Dind't know the reason why image can't load 
+    // let Img1 = document.createElement('img')
+    // Img1.src='./images/thumbnails/Tips1.jpg'
+    // Img1.alt="Tips1";
+    // Img1.width= 200;
+    // Img1.height=150;
+
+    // create header element
+    let header1 = document.createElement('h1')
+    header1.innerHTML = 'Eating and Exercise'
+
+    // create Text element
+    let text1 = document.createElement('p')
+    text1.innerHTML=
+    `<p>1.Swimming after eating is a topic that has generated various opinions.
+    <br>
+    While the "wait one hour after eating before swimming" rule is commonly
+    mentioned, it is not entirely accurate. 
+    <br><br>
+    2.Digestion varies from person to person, and there is no fixed timeframe 
+    that applies to everyone. 
+    <br>
+    However, <strong>it is generally advisable to wait 
+    at least 30 minutes to an hour before 
+    swimming after a substantial meal. 
+    <br>
+    This allows your body to focus on 
+    digestion rather than diverting blood flow to your muscles.</strong> 
+    <br><br>
+    3.It is important to listen to your body and assess your comfort level.
+    <br>
+    If you feel bloated, heavy, or experience cramps, it is best to wait a little longer. 
+    <br><br>
+    4.Ultimately, it is essential to prioritize your safety and well-being when deciding how 
+    long to wait before swimming after eating.<p>`;
+
+    // add li to store the All element
+    let listItem1= document.createElement("li")
+    listItem1.setAttribute("class","Tips_detail")
+    // listItem1.appendChild(Img1);
+    listItem1.appendChild(header1);
+    listItem1.appendChild(text1);
+
+    // Call updateDtails function to add "li" in to "ul"
+    updateDetails(listItem1);
+
+});
+
+button2.addEventListener("click", function(event) {
+    console.log("Button 2 clicked");
+
+    // create header element
+    let header2 = document.createElement('h1')
+    header2.innerHTML = 'Why warm-up important'
+
+    // create Text element
+    let text2 = document.createElement('p')
+    text2.innerHTML=
+    `<p>1. <strong>Injury Prevention</strong>: Warm-up exercises increase blood flow to the muscles, 
+           improving their flexibility and reducing the risk of injury during swimming.
+    <br><br>
+    2. <strong>Enhanced Performance</strong>: A proper warm-up helps activate the cardiovascular system,
+       increasing heart rate and oxygen delivery to the muscles, leading to improved performance in the water.
+    <br><br>
+    3. <strong>Muscle Activation</strong>: Warm-up exercises engage specific muscle groups used in swimming,
+       enhancing their responsiveness and efficiency during the swim.
+    <br><br>
+    4. <strong>Mental Preparation</strong>: Warm-up allows swimmers to focus mentally, improving concentration,
+       coordination, and reaction time in the water.
+    <br><br>
+    5. <strong>Improved Technique</strong>: Warm-up drills help refine swimming technique, allowing swimmers to 
+       perform with better form, efficiency, and speed.<p>`;
+
+    // add li to store the All element
+    let listItem2= document.createElement("li")
+    listItem2.setAttribute("class","Tips_detail")
+    listItem2.appendChild(header2);
+    listItem2.appendChild(text2);
+
+    // Call updateDtails function to add "li" in to "ul"
+    updateDetails(listItem2);
+});
+
+button3.addEventListener("click", function(event) {
+    console.log("Button 3 clicked");
+
+    // create header element
+    let header3 = document.createElement('h1')
+    header3.innerHTML = '5 reason why swimming'
+
+    // create Text element
+    let text3 = document.createElement('p')
+    text3.innerHTML=
+    `<p>1. <strong>Swimming is a low-impact exercise</strong> that puts minimal stress on joints, 
+    making it suitable for individuals with joint pain or injuries.
+    <br><br>
+    2. It provides a <strong>full-body workout</strong>, engaging muscles from head to toe and 
+    promoting overall strength and endurance.
+    <br><br>
+    3. Swimming is an <strong>excellent cardiovascular exercise</strong> that improves heart 
+    health and lung capacity.
+    <br><br>
+    4. Regular swimming can <strong>help with weight management and contribute to 
+    maintaining a healthy body composition</strong>.
+    <br><br>
+    5. It is a great way to <strong>relieve stress and promote mental well-being</strong>, 
+    offering a calming and meditative experience.<p>`;
+
+    // add li to store the All element
+    let listItem3= document.createElement("li")
+    listItem3.setAttribute("class","Tips_detail")
+    listItem3.appendChild(header3);
+    listItem3.appendChild(text3);
+
+    // Call updateDtails function to add "li" in to "ul"
+    updateDetails(listItem3);
+});
+
+
+// Tips part for add detail into ul  
+function updateDetails(listItem){
+    list.innerHTML="";
+    list.appendChild(listItem); 
+}
+
+// Tips part for delete all Tip details in the ul
+const clearButton = document.getElementById('Tips_detailClear');
+
+clearButton.addEventListener("click",function(event){
+    // remove all li element in ul
+    while(list.firstChild){
+        list.removeChild(list.firstChild)
+    }
+})
