@@ -86,7 +86,6 @@ function displayTasks() {
             delButton.appendChild(delButtonText);
             delButton.setAttribute("class","DelPlanBtn")
             item.appendChild(delButton); // Adds a delete button to every task
-
             // Listen for when the delete button is clicked
             delButton.addEventListener("click", function (event) {
 
@@ -184,6 +183,43 @@ function addTask(name, weight, duration, type, strength) {
 //make sure even though we not input any data
 //but we still can see the storage 
 displayTasks();
+
+// Here is exercise Suggest part
+// Four example
+
+ExerciseSuggest("You",70,30,"Warm up","Light");
+ExerciseSuggest("You",70,60,"Swimming","Moderate");
+ExerciseSuggest("You",70,60,"Other","Moderate");
+ExerciseSuggest("You",70,120,"Swimming","Heavy");
+function ExerciseSuggest(name, weight, duration, type, strength){
+    let burned = calculateCaloriesBurned(weight, duration, strength)
+    console.log("1")
+    let suggestList = document.getElementById('suggestList')
+    
+    let suggestItem = document.createElement("li");
+    // set listItem as li attribute, I can make it beauty in scss
+    suggestItem.setAttribute("class", "suggestItem");
+    suggestItem.innerHTML= `<h1>Suggest</h1><p><strong>Suggest ${type} exercise</strong></p><br><p>The plan duration is <strong>${duration} min</strong><br>
+    The chosen intensity is <strong>${strength}</strong></p><br><p>Claories Burned will be:<br> <strong>"${burned}"calories per minute.</strong> </p>`
+
+    suggestList.appendChild(suggestItem);
+
+    let AddButton = document.createElement("button");
+    let AddButtonText = document.createTextNode("Add");
+    AddButton.appendChild(AddButtonText);
+    AddButton.setAttribute("class","AddPlanBtn")
+    suggestList.appendChild(AddButton); 
+    
+    AddButton.addEventListener('click',(even)=>{
+        addTask(name, weight, duration, type, strength);
+    })
+}
+
+// item.innerHTML = `<h1>Suggest</h1><p><strong>${task.name}'s ${task.type} exercise</strong></p><img src='${taskImage}' width='50'/ class="planImage"><br><p>The plan duration is <strong>${task.duration} min</strong><br>
+//             The chosen intensity is <strong>${task.strength}</strong></p><img src='${taskImage2}' class="planImage" width='50'/><br><p>Claories Burned will be:<br> <strong>"${task.burned}"calories per minute.</strong> </p>`
+//             tasklist.appendChild(item);
+
+
 
 
 
