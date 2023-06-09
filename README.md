@@ -93,6 +93,14 @@ This is 3rd Suggest Plan card added into Today Plan Part
 
 5. In partials part, It contains all my website part, like heroImage part css, TodayPlan part css. These are seperated, you can just view it very quickly.
 
-6. remember to import all these file in the main.scss
+6. if you create other scss file, remember to import all these new file in the main.scss
 
 ![This is the alt text](./public/readMeImages/scss1.png)
+
+
+# FurtherImprovements or extensions
+I think the futherImprovements should in the Exercise Suggest part, It can contained more functions.
+
+1. Instead of user read all the content and choose one of them. Just add a function in the Script.js. User could just input their data in the exercise form, "Exercise Suggest" part will calculate the data in the scirpt.js and  auto changed title to "Suggest" or "Not Suggest". People can just quickly to read one of them that related to the exercise they chosed today and click it. Don't have to read all of them.
+
+![This is the alt text](./public/readMeImages/ExerciseSuggest1.png)
