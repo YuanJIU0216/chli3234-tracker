@@ -7,7 +7,7 @@ const form = document.getElementById("taskform");
 const tasklist = document.getElementById("tasklist");
 
 
-// Handle form submission, using input values to add new task
+// Handle from form submission, using input values to add new task
 form.addEventListener("submit", function (event) {
     event.preventDefault();
     addTask(
@@ -35,8 +35,11 @@ function displayTasks() {
         // Loop through all tasks in the array
         localTasks.forEach(function (task) {
 
+            
             let taskImage = null;
             let taskImage2 = null;
+
+            // switch will set image to fit with every input task.type
             switch (task.type) {
                 case 'Warm up':
                     taskImage = images['warmUp']
@@ -111,14 +114,20 @@ function displayTasks() {
 
 
 // here set delete all button which can quickly clean storage
+// cleanPlan are occur in todayPlan part
 const DelAllBtn = document.getElementById('cleanPlan');
 DelAllBtn.addEventListener("click",function(event){
+
+    // clean all localStorage data related to the key "tasks"
     localStorage.removeItem('tasks');
+
+    // Call function to display the tasks on the DOM
     displayTasks();
 })
 
 
 // This function is to get Calories which calculate auto
+// Auto caulculate calorieBurned to get type value caloriesBurned
 function calculateCaloriesBurned(weight, duration, strength) {
     let Intensity;
     if(strength == "Light"){
@@ -141,7 +150,6 @@ function calculateCaloriesBurned(weight, duration, strength) {
 // Paste your object definition from above in the function
 // Replace the property values with the input paramaters
 // Add the object to the taskList array
-
 function addTask(name, weight, duration, type, strength) {
 
     // Creating the object, directly passing in the input parameters
@@ -185,62 +193,73 @@ function addTask(name, weight, duration, type, strength) {
 displayTasks();
 
 // Here is exercise Suggest part
-// Four example
 
+// Give 4 card values into the ExerciseSuggest function
 ExerciseSuggest("Suggest",70,30,"Warm up","Light");
 ExerciseSuggest("Suggest",70,60,"Swimming","Moderate");
 ExerciseSuggest("Suggest",70,60,"Other","Moderate");
 ExerciseSuggest("Suggest",70,120,"Swimming","Heavy");
+
+// This function is Exercise Suggest part
+// It will show the information on the website
+// when people click that "Add" button, It will call the AddTask() function
+// To put the Suggest data into the Today Plan part. 
 function ExerciseSuggest(name, weight, duration, type, strength){
+    
+    // caulculate calories Burned value
     let burned = calculateCaloriesBurned(weight, duration, strength)
-    console.log("1")
+
+    // suggestList is "ul" container 
     let suggestList = document.getElementById('suggestList')
     
+    // suggestItem is "li"
     let suggestItem = document.createElement("li");
-    // set listItem as li attribute, I can make it beauty in scss
+
+    // add class attribute to the suggestItem which is "li" 
     suggestItem.setAttribute("class", "suggestItem");
+
+    // add all information into the li
+    // User could see it in the website
     suggestItem.innerHTML= `<h1>Suggest</h1><p><strong>Suggest ${type} exercise</strong><br><br>The plan duration is <strong>${duration} min</strong><br>
     The chosen intensity is <strong>${strength}</strong><br><br>Claories Burned will be:<br> <strong>"${burned}"calories per minute.</strong> </p>`
 
     
-
+    // add AddButton into the suggestItem which is "li"
+    // Therefore, li contains "information+button"
     let AddButton = document.createElement("button");
     let AddButtonText = document.createTextNode("Add");
+
+
     AddButton.appendChild(AddButtonText);
-    AddButton.setAttribute("class","AddPlanBtn")
+    AddButton.setAttribute("class","AddPlanBtn") //give button attribut and change style in scss
     suggestItem.appendChild(AddButton)
     suggestList.appendChild(suggestItem);
 
+    // once people click add button, all data will come into AddTask
+    // and create new card into the Today Plan part 
     AddButton.addEventListener('click',(even)=>{
         addTask(name, weight, duration, type, strength);
     })
 }
 
-// item.innerHTML = `<h1>Suggest</h1><p><strong>${task.name}'s ${task.type} exercise</strong></p><img src='${taskImage}' width='50'/ class="planImage"><br><p>The plan duration is <strong>${task.duration} min</strong><br>
-//             The chosen intensity is <strong>${task.strength}</strong></p><img src='${taskImage2}' class="planImage" width='50'/><br><p>Claories Burned will be:<br> <strong>"${task.burned}"calories per minute.</strong> </p>`
-//             tasklist.appendChild(item);
 
 
 
+// "Every day Tips" part
 
-
-// Every day Tips part
+// list is "ul"
 const list = document.querySelector(".Tips_content ul");
 const button1 = document.getElementById("button1");
 const button2 = document.getElementById("button2");
 const button3 = document.getElementById("button3");
 
+// quick explain for below text
+// I add addEvenListener to all three buttons, once people click it.
+// it wil show all the tips detail to the user 
 
 // add EventListener in every Item
 button1.addEventListener("click", function(event) {
     console.log("Button 1 clicked");
-
-    // Dind't know the reason why image can't load 
-    // let Img1 = document.createElement('img')
-    // Img1.src='./images/thumbnails/Tips1.jpg'
-    // Img1.alt="Tips1";
-    // Img1.width= 200;
-    // Img1.height=150;
 
     // create header element
     let header1 = document.createElement('h1')
