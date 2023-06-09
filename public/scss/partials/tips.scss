@@ -6,6 +6,9 @@
     margin-left:5rem;
     margin-right:5rem;
 
+    // make distance with Exercise form part
+    margin-bottom: 5rem;
+
     // Set the title "Everyday Tips"
     h1{
         text-align: center;
@@ -150,6 +153,7 @@
         border: 1px solid $specialGreen;
         border-radius: 4px;
         font-size: 20px;
+
 
         // just highlights information
         strong{
