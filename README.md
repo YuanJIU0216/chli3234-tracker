@@ -57,7 +57,7 @@ Now, we headed to the data model part, The user could write their data into the 
 
 
 **Today Plan Part**
-As I mentioned before, As user input the value in the exercise form and submit it. The today plan will generate one corrospond plan for user. It will give text and visual element and also tell user how many Claories they burned during exercise. User could delet it or add more from the Exercise Form or Exercise Suggest.
+As user input the value in the exercise form and submit it. The today plan will generate one corrospond plan for user. It will give text and visual element and also tell user how many Claories they burned during exercise. User could delet it or add more from the Exercise Form or Exercise Suggest.
 
 ![This is the alt text](./public/readMeImages/TodayPlan2.png)
 
