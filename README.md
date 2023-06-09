@@ -35,10 +35,9 @@ This is How I use these datas from user and auto calculate. These will be  sugge
 ![This is the alt text](./public/readMeImages/mockUp1.png)
 
 
-1. Therefore, I decided to improve my website. Firstly, I cancelled two other pages and rebuild my new pages, to make sure It can help user track their exercise clearly and use it without confused. my new website contains 5 part, and three part are used data model, one make responsive.
+Therefore, I decided to improve my website. Firstly, I cancelled two other pages and rebuild my new pages, to make sure It can help user track their exercise clearly and use it without confused. my new website contains 5 part, and three part are used data model, one make responsive.
 
-**1.HeroImages Part**  
-this part I showed my brandElement "Fitness" and tell the user what our website can provide and how can we help them in our website.
+**1.HeroImages Part** this part I showed my brandElement "Fitness" and tell the user what our website can provide and how can we help them in our website.
 
 ![This is the alt text](./public/readMeImages/heroImage.png)
 
