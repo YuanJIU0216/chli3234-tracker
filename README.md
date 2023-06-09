@@ -1,11 +1,6 @@
 # chli3234-tracker
 
 
-1. 对开发过程、迭代和改进的深入
-2. 特别强调经验教训和最佳实践
-3. 细致且易于遵循的应用程序配置
-4. 部署程序大纲
-5. 并附有对进一步改进或扩展的深思熟虑的建议。
 
 # Iteration and improvement part
 
@@ -17,11 +12,11 @@
 
 
 * __1.data model question iteration and improvements__ Therefore, I Finish my new data model, which contains "Name", "Weight", "Duration”，"Exercise Type", "Strength" And also auto caluclute data "time", "id" and "Calories Burned". I narrow my target user scope from whole sport group to swimming group. 
-**.**
+
 1. Calories Burned : are caluculate from "weight,duration,strength" . It can tell user how much calories burned during different swimming exercise. 
-**.**
+
 2. Exercise type: "warm-up", "swimming" and "others" These can be get correspond images 
-**.**
+
 3. Strenght type: "light", "moderate" and "heavy" These can be get correspont images and show it in website.
 
 ![This is the alt text](./public/readMeImages/dataModel2.png)
@@ -80,9 +75,9 @@ This is 3rd Suggest Plan card added into Today Plan Part
 **Moreover** I think the most important thing is to clear the code and make them easy to follow. I seperate my five part "heroImage", "Everday Tips", "Form", "Today Plan" and "Exercise Suggest" into 5 scss file. It save me lot of time to found every code, and know what they are quickly
 
 # Outline of Application Configuration and deployment procedures.
-1. You can write these terminal to finish setup and start working "npm run dev"
+1. You can write these to the terminal to finish setup and start working "npm run dev"
 
-2. To view website "npm run dev"
+2. To view website write to the terminal "npm run dev"
 
 3. If you want to see more setup I used, open package.json to view more detail
 
