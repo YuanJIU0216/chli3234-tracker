@@ -11,7 +11,7 @@
 ![This is the alt text](./public/readMeImages/dataModel1.png)
 
 
-* __2.data model question iteration and improvements__ Therefore, I Finish my new data model, which contains "Name", "Weight", "Duration”，"Exercise Type", "Strength" And also auto caluclute data "time", "id" and "Calories Burned". I narrow my target user scope from whole sport group to swimming group. 
+* __1.data model question iteration and improvements__ Therefore, I Finish my new data model, which contains "Name", "Weight", "Duration”，"Exercise Type", "Strength" And also auto caluclute data "time", "id" and "Calories Burned". I narrow my target user scope from whole sport group to swimming group. 
 
 1. Calories Burned : are caluculate from "weight,duration,strength" . It can tell user how much calories burned during different swimming exercise. 
 
