@@ -19,9 +19,18 @@
     &_grid{
         // start to grid the column
         display: grid;
+
+        // use grid from mixnis.scss to set different grid of tips
+
+        // mobile styles
+        @include breakpoint-up(medium){
+            grid-template-columns: repeat(1,1fr);
+        }
+
+        @include breakpoint-up(large){
+            grid-template-columns: repeat(3,1fr);
+        }
         
-        // repeat three Tips and give all size 1fr.
-        grid-template-columns: repeat(3,1fr);
 
         // Distance between each grid
         gap: 4rem;
