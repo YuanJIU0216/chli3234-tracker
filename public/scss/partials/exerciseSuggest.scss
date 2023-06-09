@@ -1,44 +1,50 @@
-// because this part is also doing the card part
-// css is totally same with todayPlan.scss
+// Exercise Suggest part
 
+// because this part is also doing the card style
+// css is quite same with todayPlan.scss
 
+// Container
 .exerciseSuggest{
+    // container position and color
     background-color: $specialGreen;
     margin-left: 5rem;
     margin-right: 5rem;
 
-
-    
-
-
     // keep distance with other part
-    h1{
-        margin-top: 10rem;
+    margin-top: 10rem;
+
+    // Header "Exercise Suggest"
+    // set header position and color
+    h1{ 
         padding-top: 2rem;
         color:white;
     }
 
+    //suggestList is "ul"
     #suggestList{
+        // set these 4 suggest card grid
         display: grid;
 
+        // mobile size
         @include breakpoint-down(small){
             grid-template-columns: repeat(1,1fr);
         }
 
+        // medium size (ipad)
         @include breakpoint-up(medium){
             gap: 2rem;
             grid-template-columns: repeat(2,1fr);
         }
 
+        // desktop size
         @include breakpoint-up(large){
             gap: 4rem;
             grid-template-columns: repeat(4,1fr);
         }
 
-        
+        // suggestItem class is "li"
+        // you can find this class in script.js
         .suggestItem{
-            // padding: 2rem;
-            // display: block;
 
             // make card stay in center
             margin: 1rem auto;
@@ -56,6 +62,7 @@
             }
         }
 
+        // set suggest card header
         h1{
             // cancel the inside effect 
             margin-top: 0rem;
@@ -69,11 +76,13 @@
             color: white;
         }
 
+        // set strong word color and style
         strong{
             font-size: 1.5rem;
             color:$specialGreen;
         }
 
+        // set p color and style
         p{
             color:black;
             text-align: center;
@@ -82,7 +91,9 @@
             margin: 0;
         }
 
+        // set Add Suggest Button color, style, position
         .AddPlanBtn{
+
             // make sure in center
             width: 90%;
             display: block;
@@ -90,9 +101,13 @@
             height: 60px;
             border: 2px solid #666;
             border-radius: 12px;
+
+            // set color
             border-color: transparent;
             background-color: $specialGreen;
             color: white;
+
+            // set mouse type and anime
             cursor: pointer;
             transition: all 0.2s ease-in-out;
         }
