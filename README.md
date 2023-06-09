@@ -4,14 +4,14 @@
 
 # Iteration and improvement part
 
-* __feedback from tutor and Assessment 3__ For this Final Assessment, I almost refresh and iterate all the context and data model related to my assessment 3. 
+**feedback from tutor and Assessment 3** For this Final Assessment, I almost refresh and iterate all the context and data model related to my assessment 3. 
 
-* __1.The first one is data model question__ This images is my previous data model, but it's too board. Therefore tutor suggest me to narrow down the target audience futher to help justify further design choices. And also An online community and recommendations is beyond the scope of this task, so it's not necessary to include these goals. the data model should cover each data point for each item that the user inputs, it should not include the users personal details for something such as a profile as this information would only need to put in once.
+* __The first one is data model question__ This images is my previous data model, but it's too board. Therefore tutor suggest me to narrow down the target audience futher to help justify further design choices. And also An online community and recommendations is beyond the scope of this task, so it's not necessary to include these goals. the data model should cover each data point for each item that the user inputs, it should not include the users personal details for something such as a profile as this information would only need to put in once.
 
 ![This is the alt text](./public/readMeImages/dataModel1.png)
 
 
-* __1.data model question iteration and improvements__ Therefore, I Finish my new data model, which contains "Name", "Weight", "Duration”，"Exercise Type", "Strength" And also auto caluclute data "time", "id" and "Calories Burned". I narrow my target user scope from whole sport group to swimming group. 
+* __2.data model question iteration and improvements__ Therefore, I Finish my new data model, which contains "Name", "Weight", "Duration”，"Exercise Type", "Strength" And also auto caluclute data "time", "id" and "Calories Burned". I narrow my target user scope from whole sport group to swimming group. 
 
 1. Calories Burned : are caluculate from "weight,duration,strength" . It can tell user how much calories burned during different swimming exercise. 
 
@@ -20,6 +20,8 @@
 3. Strenght type: "light", "moderate" and "heavy" These can be get correspont images and show it in website.
 
 ![This is the alt text](./public/readMeImages/dataModel2.png)
+
+
 
 This is How I use these datas from user and auto calculate. These will be  suggest plan help user to get their own today plan and record their exercise in the local storage. And also give the some feedback about "This is how many Claories I burned during exercise and also give me clear visual plan"
 
@@ -31,6 +33,7 @@ This is How I use these datas from user and auto calculate. These will be  sugge
 
 
 Therefore, I decided to improve my website. Firstly, I cancelled two other pages and rebuild my new pages, to make sure It can help user track their exercise clearly and use it without confused. my new website contains 5 part, and three part are used data model, one make responsive.
+
 
 **HeroImages Part** this part I showed my brandElement "Fitness" and tell the user what our website can provide and how can we help them in our website.
 
