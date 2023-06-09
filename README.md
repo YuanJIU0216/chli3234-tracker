@@ -26,7 +26,6 @@
 
 ![This is the alt text](./public/readMeImages/dataModel2.png)
 
-**.**
 This is How I use these datas from user and auto calculate. These will be  suggest plan help user to get their own today plan and record their exercise in the local storage. And also give the some feedback about "This is how many Claories I burned during exercise and also give me clear visual plan"
 
 ![This is the alt text](./public/readMeImages/dataModel3.png)
@@ -35,10 +34,9 @@ This is How I use these datas from user and auto calculate. These will be  sugge
 
 ![This is the alt text](./public/readMeImages/mockUp1.png)
 
-**.** 
-Therefore, I decided to improve my website. Firstly, I cancelled two other pages and rebuild my new pages, to make sure It can help user track their exercise clearly and use it without confused. 
-**.** 
-my new website contains 5 part, and three part are used data model, one make responsive. 
+
+1. Therefore, I decided to improve my website. Firstly, I cancelled two other pages and rebuild my new pages, to make sure It can help user track their exercise clearly and use it without confused. my new website contains 5 part, and three part are used data model, one make responsive.
+
 **1.HeroImages Part**  
 this part I showed my brandElement "Fitness" and tell the user what our website can provide and how can we help them in our website.
 
@@ -53,7 +51,7 @@ this part, I used responsive design in it. When user want to know more informati
 
 **3.Exercise form Part**
 Now, we headed to the data model part, The user could write their data into the form and press the submit. All the data will occurs in the Today Plan Part. For Example I used the data "name: Jack, Weight : 80, Duration: 60, Type: Warm up, Strength: light." These Data will be remember in the local storage. Don't worry it will lose when fresh the page
- ![This is the alt text](./public/readMeImages/form1.png)
+![This is the alt text](./public/readMeImages/form1.png)
 
 ![This is the alt text](./public/readMeImages/TodayPlan1.png)
 
