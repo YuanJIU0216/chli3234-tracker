@@ -20,8 +20,11 @@
 
     #suggestList{
         display: grid;
+        justify-content: space-around;
+        
         // repeat three Tips and give all size 1fr.
         grid-template-columns: repeat(4,1fr);
+
         // Distance between each grid
         gap: 4rem;
         

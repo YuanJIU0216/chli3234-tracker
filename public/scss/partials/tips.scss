@@ -17,11 +17,16 @@
     // }
 
     &_grid{
+        // start to grid the column
         display: grid;
+        
         // repeat three Tips and give all size 1fr.
         grid-template-columns: repeat(3,1fr);
+
         // Distance between each grid
         gap: 4rem;
+
+
         
     }
 
