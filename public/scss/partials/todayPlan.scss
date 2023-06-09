@@ -1,15 +1,19 @@
+// Today plan part
+
 .todayPlan{
+    // set container color and position
     .plan-container{
         background-color: hsl(0,0%,98%);
         margin-left: 5rem;
         margin-right: 5rem;
     }
 
+    // tasklist container is ul 
     #tasklist{
-        // align-items: center;
+
+        // you can found listItem class in javascript
+        // listItem is li
         .listItem{
-            // padding: 2rem;
-            // display: block;
 
             // make card stay in center
             margin: 1rem auto;
@@ -18,29 +22,33 @@
 
             background: white;
 
+            // set card style make it beauty
             box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
             overflow: hidden;
             transition: all 0.3s linear;
 
+            // mouse on card style
             &:hover{
                 box-shadow: 2px 8px 45px rgba(0, 0, 0, .25); 
             }
 
+            // set card's title  
             h1{
 
                 text-align: center;
                 padding: 2rem 2.5rem;
                 background-image: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
-                // background-color: $specialGreen;
                 font-size: 1.5rem;
                 color: white;
             }
 
+            // set important word size and color
             strong{
                 font-size: 1.5rem;
                 color:$specialGreen;
             }
 
+            // set normal word size and color and position
             p{
                 color:black;
                 text-align: center;
@@ -49,22 +57,31 @@
                 margin: 0;
             }
 
+            // set image position in the card
             .planImage{
                 display: block;
                 margin: 0 auto;
             }
 
+            // set delbutton style,color and positon in the card
             .DelPlanBtn{
+                // position
                 width: 80%;
                 display: block;
                 margin: 1em auto;
                 height: 60px;
                 border: 2px solid #666;
                 border-radius: 12px;
+
+                // color
                 border-color: transparent;
                 background-color: $specialGreen;
                 color: white;
+
+                // mouse on it type
                 cursor: pointer;
+
+                // anime
                 transition: all 0.2s ease-in-out;
             }
 
@@ -72,23 +89,29 @@
         }
     }
 
+    // This is the "Clear All" button
     #cleanPlan{
+
         // make button go center and add styles
         width: 80%;
         display: block;
         margin: 1em auto;
         height: 60px;
         
+        // set border style
         border: 2px solid #666;
         border-radius: 12px;
         border-color: transparent;
 
+        // set color
         background-color: $specialRed;
         color: white;
+
+        // set mouse type and anime
         cursor: pointer;
         transition: all 0.2s ease-in-out;
 
-        // make button anime
+        // make button anime when mouse on it
         &:hover {
             transition:all 0.3s ease-in-out; 
             transform: translateY(-2px);
