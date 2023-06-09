@@ -1,47 +1,52 @@
+// Everyday Tips Part
 .Tips{
-    background-color: hsl(0,0%,98%);
-    margin-left: 5rem;
-    margin-right: 5rem;
-    
-}
 
-.Tips{
+    // set the Tips background 
+    background-color: hsl(0,0%,98%);
+    margin-left:5rem;
+    margin-right:5rem;
+
+    // Set the title "Everyday Tips"
     h1{
         text-align: center;
         color:$specialGreen;
         font-size:2rem;
     }
 
-    // &_content{
-
-    // }
-
+    // container that manage three tips
     &_grid{
-        // start to grid the column
         display: grid;
 
-        // use grid from mixnis.scss to set different grid of tips
-
-        // mobile styles
-        @include breakpoint-up(medium){
-            grid-template-columns: repeat(1,1fr);
-        }
-
-        @include breakpoint-up(large){
-            grid-template-columns: repeat(3,1fr);
-        }
-        
-
-        // Distance between each grid
+        // Distance between each tips
         gap: 4rem;
 
+        // use function from mixnis.scss 
+        // make different layout in different size screen
+        // mobile styles
+        @include breakpoint-up(medium){
 
+            // grid container with a single column that use full width of the container.
+            grid-template-columns: repeat(1,1fr);
+
+        }
+
+        // computer styles
+        @include breakpoint-up(large){
+
+            // creates a grid container with 3 columns of equal width.
+            grid-template-columns: repeat(3,1fr);
+
+        }
+        
         
     }
 
+    // This part are for every tip card.
     &_item{
+        // make corner size
        border-radius: 0.5rem;
-        // overflow make sure actual conner occurs   
+
+        // overflow make sure actual corner occurs   
        overflow: hidden;
 
         // make the shadow on every tips card    
@@ -56,6 +61,7 @@
        }
     }
 
+    // set images style
     &_image{
         height:12.5rem;
         background-size:cover;
@@ -64,22 +70,27 @@
         
     }
 
+    // set text position and color
     &_text{
         padding:1rem 2rem;
         text-align: center;
         color:$specialGreen;
     }
 
+    // set card's title size 
     &_title{
         font-size: large;
     }
 
+    // set "more detail" button style
     &_button{
         margin-top: 0.5rem;
         color:white;
         background-color:$specialGreen;
         border-radius: 5px;
         border-color: transparent;
+
+        // when mouse on the button
         &:hover{
             color:white;
             background-color:$specialRed;
@@ -87,11 +98,8 @@
         
     }
 
-    // &_description{
 
-    // }
-
-    // DetailClear button
+    // "Close all context" button's styles, color and position
     #Tips_detailClear{
 
         // make button go center and add styles
@@ -100,16 +108,23 @@
         margin: 1em auto;
         height: 60px;
         
+        // set button border
         border: 2px solid #666;
         border-radius: 12px;
         border-color: transparent;
 
+        // set color
         background-color: $specialGreen;
         color: white;
+
+        // mouse tell user can be interactive
         cursor: pointer;
+
+        // for anime
         transition: all 0.2s ease-in-out;
 
         // make button anime
+        // when mouse on it, it will active
         &:hover {
             transition:all 0.3s ease-in-out; 
             transform: translateY(-2px);
@@ -125,17 +140,21 @@
         }
     }
 
+    // This is detail part (since user click detail button, it will show up)
     &_detail{
+
+        // set detail contianer style, color and position
         list-style-type: none;
         text-align: center;
         padding: 5%;
         border: 1px solid $specialGreen;
         border-radius: 4px;
         font-size: 20px;
-        p{
-            strong{
-                color:$specialGreen
-            }
+
+        // just highlights information
+        strong{
+            color:$specialGreen
         }
+        
     }
 }
